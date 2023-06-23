@@ -115,9 +115,9 @@ Crear una función esFraccionMayorAUno que tome como argumento un string fraccio
 
 // if (isNaN(num1)) {
 //     console.log("Entre en el if")
-// }
+// };
 
-const condicion1 = true
+const condicion1 = true;
 // const condicion2 = false
 
 // if (condicion1) {
@@ -140,11 +140,11 @@ const condicion1 = true
 // nombre2 = "Sofia"
 // console.log(nombre2)
 
-// let mensaje = ""
+// let mensaje = "";
 
 // if (condicion1) {
 //     mensaje = "Me cumpli"
-// }
+// };
 
 // console.log(mensaje)
 
@@ -219,9 +219,9 @@ const condicion1 = true
 //     }
 // }
 
-// Funciones nativas
+// FUNCIONES NATIVAS
 
-const nombre = "pilar figueroa"
+const nombre = "pilar figueroa";
 
 // .length => devolver la cantidad de caracteres que tiene un string
 // console.log(nombre.length)
