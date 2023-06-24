@@ -21,22 +21,22 @@
 // EJERCICIO 3: multiplicar(a, b)
 //Crear una función multiplicar que tome como argumentos dos números y devuelva la multiplicación de ellos  
 
-// const multiplicar = (num1, num2) => {
-//   return num1 * num2
-// };
+const multiplicar = (num1, num2) => {
+  return num1 * num2
+};
 
-// multiplicar(2, 3) // 6
-// multiplicar(2, 2); // 4
+console.log(multiplicar(2, 3)); // 6
+console.log(multiplicar(2, 2)); // 4
 
 // EJERCICIO 4: dividir(a, b)
 //Crear una función dividir que tome como argumentos dos números y devuelva la suma de ellos 
 
-// const dividir = (num1, num2) => {
-//   return num1 / num2
-// };
+const dividir = (num1, num2) => {
+  return num1 / num2
+};
 
-// dividir(12, 3) // 4
-// dividir(8, 2);
+console.log(dividir(12, 3)); // 4
+console.log(dividir(8, 2));
 
 // EJERCICIO 5: esPar(numero)
 // Crear una función esPar que tome como argumento un número y devuelva true si dicho números es par o false si no lo es
@@ -46,7 +46,7 @@ const esPar = (num) => {
   return (num % 2) === 0
 };
 
-esPar(2); // true
+console.log(esPar(2)); // true
 
 // EJERCICIO 6: esImpar(numero)
 // Crear una función esImpar que tome como argumento un número y devuelva true si dicho números es impar o false si no lo es
@@ -72,39 +72,45 @@ calcularAreaTriangulo(3, 4);
 // Crear una función gritar que tome como argumento un string y devuelva el mismo string con un signo de exclamación al principio y al final del mismo
 
 const gritar = (str) => {
-    return `¡${str}!`
+    return `¡${str}!` // recibe 1 string y lo devuelve con ¡!
   }
   
-  gritar('hola'); // ¡hola!
-  gritar('aaaaaaaaaa'); // ¡aaaaaaaaaa!
-
+console.log(gritar('hola')); // ¡hola!
+console.log(gritar('aaaaaaaaaa')) ; // ¡aaaaaaaaaa!
 
 // EJERCICIO 9: obtenerNombreCompleto(nombre, apellido)
 //Crear una función obtenerNombreCompleto que tome como argumento un nombre y un apellido y devuelva un string con la unión de ambos valores
 
 const obtenerNombreCompleto = (nombre, apellido) => {
-    return nombre + ' ' + apellido
-  };
-  
-  obtenerNombreCompleto('Ada', 'Lovelace'); // Ada Lovelace
+  return `${nombre} ${apellido}`
+};
 
+console.log(obtenerNombreCompleto('Ada', 'Lovelace')); // Ada Lovelace
+  
 // EJERCICIO 10: saludar(nombre)
 //Crear una función saludar que tome como argumentos un nombre y devuelva un saludo que lo incluya
 
 const saludar = (nombre) => {
-  return 'Hola ' + nombre + ', un gusto conocerte'
+  return `Hola ${nombre}, un gusto conocerte` // recibe un argumento y lo devuelve con el saludo
 };
 
-saludar('Ada'); // 'Hola Ada, un gusto conocerte'
+console.log(saludar('Ada Lovelace')); // 'Hola Ada, un gusto conocerte'
 
 //EJERCICIO 11: saludarGritando(nombre, apellido)
 //Usando las funciones anteriores (obtenerNombreCompleto, saludar y gritar), crear una función saludarGritando que tome como argumentos un nombre y un apellido y devuelva un saludo con signos de exclamación
- 
-const saludarGritando = (nombre, apellido) => {
-  return '¡Hola ' + nombre + ' ' + apellido + ', un gusto conocerte!'
-};
 
-saludarGritando('Ada', 'Lovelace'); // ¡Hola Ada Lovelace, un gusto conocerte!
+const saludarGritando = (nombre, apellido) => {
+const nombreCompleto = obtenerNombreCompleto(nombre, apellido);
+//console.log(nombreCompleto);
+const saludo = saludar(nombreCompleto);
+//console.log(saludo);
+//const grito = gritar(saludo);
+//console.log(grito);
+  return gritar(saludo);
+}
+
+console.log(saludarGritando('Ada', 'Lovelace'));
+  
 
 // EJERCICIO 12: obtenerDatosDeCiudad(nombre, poblacion, pais)
 //Crear una función obtenerDatosDeCiudad que tome como argumentos un string nombre, un número poblacion y un string pais y devuelva string 
@@ -129,7 +135,7 @@ const convertirHorasEnSegundos = (horas) => {
   return horas * 3600 // una hora tiene 3600 segundos
 };
 
-convertirHorasEnSegundos(1) // 3600
+console.log(convertirHorasEnSegundos(1)); // 3600
 convertirHorasEnSegundos(2);
 
 // EJERCICIO 14: calcularPerimetroRectangulo(ancho, alto)
@@ -145,29 +151,32 @@ calcularPerimetroRectangulo(2, 2);
 // EJERCICIO 15: calcularPorcentaje(numero, porcentaje)
 //Crear una función calcularPorcentaje que tome como argumentos un número y un porcentaje y devuelva el valor del porcentaje correspondiente al número 
 
-const calcularPorcentaje = (num, porcentaje) => {
-  return (num * porcentaje) / 100;
+const calcularPorcentaje = (numero, porcentaje) => {
+  return (numero * porcentaje) / 100;
 };
 
-calcularPorcentaje(100, 5);
+console.log(calcularPorcentaje(100, 50));
 
 // EJERCICIO 16: sumarPorcentaje(numero, porcentaje)
 // Crear una función sumarPorcentaje que tome como argumentos un número y un porcentaje y devuelva la suma de dicho número con la de su porcentaje. Usar la función calcularPorcentaje para obtener el porcentaje a sumar
 
-const sumarPorcentaje = (num, porcentaje) => {
-  return ((num * porcentaje) / 100) + num 
+const sumarPorcentaje = (numero2, porcentaje2) => {
+  const suma = calcularPorcentaje(numero2, porcentaje2);
+  //console.log(calcularPorcentaje(200, 50));
+  return numero2 + suma
 };
 
-sumarPorcentaje(100, 50);
+console.log(sumarPorcentaje(200, 50));
 
 // EJERCICIO 17: restarPorcentaje(numero, porcentaje)
 // Crear una función restarPorcentaje que tome como argumentos un número y un porcentaje y devuelva la resta de dicho número con la de su porcentaje. Usar la función calcularPorcentaje para obtener el porcentaje a restar 
 
-const restarPorcentaje = (num, porcentaje) => {
-  return num - ((num * porcentaje) / 100)  
-};
+const restarPorcentaje = (numero3, porcentaje3) => {
+  const resta = calcularPorcentaje(numero3, porcentaje3)
+  return numero3 - resta;
+}
 
-restarPorcentaje(100, 15) // 85
+console.log(restarPorcentaje(200, 50)); 
 
 // EJERCICIO 18: calcularFPS(fps, minutos)
 // FPS son cuadros por segundo (frames per second). Crear una una función calcularFPS que tome como argumentos una cantidad de cuadros por segundo y una cantidad de minutos, y devuelva cuántos cuadros hubo en esa cantidad de minutos --> calcularFPS(1, 1) // 60
@@ -195,19 +204,45 @@ const generarEmail = (usuario, dominio) => {
   return `${usuario}@${dominio}.com`
 };
 
-generarEmail('adalovelace', 'hotmail'); // adalovelace@hotmail.com
+console.log(generarEmail('adalovelace', 'hotmail')); // adalovelace@hotmail.com
 
 // EJERCICIO 21: esMayorDeEdad(edad)
 // Crear una función esMayorDeEdad que tome como argumento un número edad y devuelva true si es mayor de edad (18 o más) o false de lo contrario 
-esMayorDeEdad(15) // false
+const esMayorDeEdad = (edad) => {
+if (edad >= 18) {
+  return true;
+} else if (edad < 18) {
+  return false;
+  }
+};
+
+console.log(esMayorDeEdad(15)); // false
+console.log(esMayorDeEdad(20)); // true
 
 // EJERCICIO 22: haceCalor(temperatura)
 // Crear una función haceCalor que tome como argumento un número temperatura y devuelva true si hace calor (22 grados o más) o false de lo contrario 
-haceCalor(12) // false
+
+const haceCalor = (temperatura) => {
+if (temperatura >= 22) {
+  return true
+   }
+  return false
+};
+
+console.log(haceCalor(10)); // false
 
 // EJERCICIO 23: haceFrio(temperatura)
 // Crear una función haceCalor que tome como argumento un número temperatura y devuelva true si hace frio (12 grados o menos) o false de lo contrario 
-haceFrio(12) // true
+
+const haceFrio = (temperatura) => {
+  if (temperatura <= 12) {
+    return true;
+  }
+  return false;
+}
+
+console.log(haceFrio(12)); // true
+console.log(haceFrio(20)); // false
 
 //EJERCICIO 24: calcularPuntaje(facil, normal, dificil)
 // Crear una función calcularPuntaje que calcule el puntaje de un examen que consiste en ejercicios de distinto nivel. Debe tomar como argumento tres numeros que consisten en la cantidad de ejercicios resueltos en cada nivel y devolver un número con el puntaje correspondiente. El puntaje se calcula de la siguiente forma:
@@ -222,12 +257,20 @@ const calcularPuntaje = (num1, num2, num3) => {
   return facil + normal + dificil;
 };
 
-calcularPuntaje(3, 0, 0) // 9
+console.log(calcularPuntaje(3, 0, 0)) // 9
 calcularPuntaje(0, 2, 1) // 20
 calcularPuntaje(5, 1, 2) // 40
 
 // EJERCICIO 25: aceptaDeposito(monto)
 // Crear una función aceptaDeposito que tome como argumento un número monto y devuelva true si el monto es divisible por 10 o false si no lo es
 
-aceptaDeposito(440) // true 
-aceptaDeposito(123) // false
+const aceptaDeposito =  (monto) => {
+  if (monto % 10 == 0) {
+    return true
+  }
+  return false;
+}
+
+console.log(aceptaDeposito(440)); // true 
+console.log(aceptaDeposito(123)); // false
+console.log(aceptaDeposito(50)); // true
